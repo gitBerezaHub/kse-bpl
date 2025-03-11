@@ -11,63 +11,63 @@ const formulas = computed(() => [
     index: 3,
     name: "Тангенсальное ускорение",
     answer: store.at1,
-    measure: "м/с²"
+    measure: "м/с²",
   },
   {
     index: 4,
     name: "Угловая скорость блока 2",
     answer: store.w2,
-    measure: "с⁻¹"
+    measure: "с⁻¹",
   },
   {
     index: 5,
     name: "Угловое ускорение блока 2",
     answer: store.E2,
-    measure: "с⁻²"
+    measure: "с⁻²",
   },
   {
     index: 6,
     name: "Скорость малого цилиндра блока 2",
     answer: store.Vb,
-    measure: "м/с"
+    measure: "м/с",
   },
   {
     index: 7,
     name: "Ускорение малого цилиндра блока 2",
     answer: store.atb,
-    measure: "м/с²"
+    measure: "м/с²",
   },
   {
     index: 8,
     name: "Угловая скорость блока 3",
     answer: store.w3,
-    measure: "c⁻¹"
+    measure: "c⁻¹",
   },
   {
     index: 9,
     name: "Угловое ускорение блока 3",
     answer: store.E3,
-    measure: "с⁻²"
+    measure: "с⁻²",
   },
   { index: 10, name: "Скорость точки М", answer: store.Vm, measure: "м/с" },
   {
     index: 11,
     name: "Тангесальное ускорение точки М",
     answer: store.atm,
-    measure: "м/с²"
+    measure: "м/с²",
   },
   {
     index: 12,
     name: "Нормальное ускорение точки М",
     answer: store.anm,
-    measure: "м/с²"
+    measure: "м/с²",
   },
   {
     index: 13,
     name: "Полное ускорение точки М",
     answer: store.am,
-    measure: "м/с²"
-  }
+    measure: "м/с²",
+  },
 ]);
 </script>
 

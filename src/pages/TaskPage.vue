@@ -30,7 +30,7 @@ const answer = computed(() => {
       <TaskPcture />
       <DataTable />
       <label for="quantity" style="margin-top: 20px"
-      >Количество знаков после запятой:</label
+        >Количество знаков после запятой:</label
       >
       <input
         id="quantity"
