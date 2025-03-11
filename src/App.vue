@@ -12,6 +12,7 @@ import TaskPage from "@/pages/TaskPage.vue";
 body {
   overflow: hidden;
 }
+
 #app {
   font-family: Montserrat, "sans-serif";
   font-size: 11px;

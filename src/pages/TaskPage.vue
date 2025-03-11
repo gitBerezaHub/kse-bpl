@@ -1,13 +1,15 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import TaskPcture from "@/components/TaskPcture.vue";
 import DataTable from "@/components/DataTable.vue";
 import FormulaList from "@/components/FormulaList.vue";
 import { useDataStore } from "@/store/dataStore";
 import { computed } from "vue";
+
 const taskText =
   "Механизм состоит из двух блоков 2 и 3, каждый из которых образован совокупностью жестко связанных большого и малого цилиндров. Большой цилиндр 2 взаимодействует (без скольжения) с малым цилиндром 3 в точке В. Малый цилиндр 2 НЕ взаимодействует с большим цилиндром 3. К большему цилиндру 2 в точке А на «нерастяжимом тросе» подвешен груз 1, который совершает «прямолинейное движение» по заданному уравнению. Определить «путь», пройденный грузом 1, а так же «скорость», «нормальное», «тангенциальное» и «полное ускорение» точки М большого цилиндра блока 3 механизма в момент времени t.";
 
 const store = useDataStore();
+
 function calcFormulas() {
   if (store.R2 < 1 || store.r2 < 1 || store.R3 < 1 || store.r3 < 1) return 0;
   for (let i = 1; i < 16; i++) {
@@ -28,13 +30,13 @@ const answer = computed(() => {
       <TaskPcture />
       <DataTable />
       <label for="quantity" style="margin-top: 20px"
-        >Количество знаков после запятой:</label
+      >Количество знаков после запятой:</label
       >
       <input
-        type="number"
         id="quantity"
-        style="width: 30%"
         v-model="store.symbolsQuantity"
+        style="width: 30%"
+        type="number"
       />
       <button class="start-btn" @click="calcFormulas">Посчитать</button>
     </div>
@@ -46,7 +48,7 @@ const answer = computed(() => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .page-wrapper {
   width: 100vw;
   height: 100vh;
@@ -54,6 +56,7 @@ const answer = computed(() => {
   flex-direction: row;
   justify-content: space-between;
 }
+
 .left,
 .right {
   height: 100%;
@@ -64,6 +67,7 @@ const answer = computed(() => {
 .left {
   width: 40%;
 }
+
 .right {
   width: 55%;
 }

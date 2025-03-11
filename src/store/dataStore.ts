@@ -67,7 +67,9 @@ export const useDataStore = defineStore("data", {
       }
     },
     roundAllNumbers() {
-      const roundToFour = (num: number) => Math.round(num * 10**this.symbolsQuantity) / 10**this.symbolsQuantity;
+      const roundToFour = (num: number) =>
+        Math.round(num * 10 ** this.symbolsQuantity) /
+        10 ** this.symbolsQuantity;
 
       Object.keys(this.$state).forEach((key) => {
         if (typeof this.$state[key as keyof typeof this.$state] === "number") {

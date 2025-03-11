@@ -1,12 +1,12 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="wrapper-pic">
-    <img src="@/assets/task-img.png" alt="" />
+    <img alt="" src="@/assets/task-img.png" />
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 img {
   width: 80%;
 }
