@@ -11,7 +11,7 @@ const taskText =
 const store = useDataStore();
 
 function calcFormulas() {
-  if (store.R2 < 1 || store.r2 < 1 || store.R3 < 1 || store.r3 < 1) return 0;
+  if (store.t <= 0) return 0;
   for (let i = 1; i < 16; i++) {
     store.calc(i);
   }
@@ -29,9 +29,9 @@ const answer = computed(() => {
     <div class="left">
       <TaskPcture />
       <DataTable />
-      <label for="quantity" style="margin-top: 20px"
-        >Количество знаков после запятой:</label
-      >
+      <label for="quantity" style="margin-top: 20px">
+        Количество знаков после запятой:
+      </label>
       <input
         id="quantity"
         v-model="store.symbolsQuantity"

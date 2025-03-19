@@ -31,36 +31,16 @@ const store = useDataStore();
         </td>
         <td class="equation"><p>y₁ = 43 + 28t²</p></td>
         <td>
-          <input
-            v-model="store.R2"
-            :class="{ 'invalid-input': store.R2 < 1 }"
-            min="1"
-            type="number"
-          />
+          <p>{{ store.R2 }}</p>
         </td>
         <td>
-          <input
-            v-model="store.r2"
-            :class="{ 'invalid-input': store.r2 < 1 }"
-            min="1"
-            type="number"
-          />
+          <p>{{ store.r2 }}</p>
         </td>
         <td>
-          <input
-            v-model="store.R3"
-            :class="{ 'invalid-input': store.R3 < 1 }"
-            min="1"
-            type="number"
-          />
+          <p>{{ store.R3 }}</p>
         </td>
         <td>
-          <input
-            v-model="store.r3"
-            :class="{ 'invalid-input': store.r3 < 1 }"
-            min="1"
-            type="number"
-          />
+          <p>{{ store.r3 }}</p>
         </td>
       </tr>
     </tbody>
