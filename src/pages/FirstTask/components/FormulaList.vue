@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { useDataStore } from "@/store/dataStore";
+import { useDataStore } from "@/pages/FirstTask/store/dataStore";
 
 const store = useDataStore();
 

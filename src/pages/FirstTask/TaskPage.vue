@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import TaskPcture from "@/components/TaskPcture.vue";
-import DataTable from "@/components/DataTable.vue";
-import FormulaList from "@/components/FormulaList.vue";
-import { useDataStore } from "@/store/dataStore";
+import TaskPcture from "@/pages/FirstTask/components/TaskPcture.vue";
+import DataTable from "@/pages/FirstTask/components/DataTable.vue";
+import FormulaList from "@/pages/FirstTask/components/FormulaList.vue";
+import { useDataStore } from "@/pages/FirstTask/store/dataStore";
 import { computed } from "vue";
 
 const taskText =

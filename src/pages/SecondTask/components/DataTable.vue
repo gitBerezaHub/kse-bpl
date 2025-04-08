@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import { useDataStore } from "@/store/dataStore";
+import { useDataStore } from "@/pages/FirstTask/store/dataStore";
+import { useSecondDataStore } from "@/pages/SecondTask/store/dataStore";
 
 const store = useDataStore();
+const secondStore = useSecondDataStore();
 </script>
 
 <template>
@@ -9,7 +11,7 @@ const store = useDataStore();
     <thead>
       <tr>
         <th rowspan="2">Момент времени<br />t, с</th>
-        <th rowspan="2">Уравнение движения<br />груза 1, мм</th>
+        <th rowspan="2">Масса груза<br />m1, кг</th>
         <th colspan="4">Радиусы цилиндров, мм</th>
       </tr>
       <tr>
@@ -22,14 +24,16 @@ const store = useDataStore();
     <tbody>
       <tr>
         <td>
+          <p>{{ store.t }}</p>
+        </td>
+        <td class="equation">
           <input
-            v-model="store.t"
+            v-model="secondStore.m1"
             :class="{ 'invalid-input': store.t < 1 }"
             min="1"
             type="number"
           />
         </td>
-        <td class="equation"><p>y₁ = 43 + 28t²</p></td>
         <td>
           <p>{{ store.R2 }}</p>
         </td>
