@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useDataStore } from "@/store/dataStore";
+import { onMounted } from "vue";
 
 const store = useDataStore();
 </script>
@@ -8,40 +9,31 @@ const store = useDataStore();
   <table class="grid-container">
     <thead>
       <tr>
-        <th rowspan="2">Момент времени<br />t, с</th>
-        <th rowspan="2">Уравнение движения<br />груза 1, мм</th>
-        <th colspan="4">Радиусы цилиндров, мм</th>
+        <th colspan="3">Сопротивление, Ом</th>
+        <th colspan="2">Электродвижущая сила, В</th>
       </tr>
       <tr>
-        <th class="sub-header">R<sub>2</sub></th>
-        <th class="sub-header">r<sub>2</sub></th>
+        <th class="sub-header">R<sub>1</sub></th>
         <th class="sub-header">R<sub>3</sub></th>
-        <th class="sub-header">r<sub>3</sub></th>
+        <th class="sub-header">R<sub>4</sub></th>
+        <th class="sub-header">ε</th>
+        <th class="sub-header">ε<sub>1</sub></th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td>4</td>
+        <td>6</td>
+        <td>7</td>
         <td>
           <input
-            v-model="store.t"
-            :class="{ 'invalid-input': store.t < 1 }"
-            min="1"
+            v-model="store.E"
             type="number"
+            :class="{ 'invalid-input': store.E < 1 }"
+            min="1"
           />
         </td>
-        <td class="equation"><p>y₁ = 43 + 28t²</p></td>
-        <td>
-          <p>{{ store.R2 }}</p>
-        </td>
-        <td>
-          <p>{{ store.r2 }}</p>
-        </td>
-        <td>
-          <p>{{ store.R3 }}</p>
-        </td>
-        <td>
-          <p>{{ store.r3 }}</p>
-        </td>
+        <td>11</td>
       </tr>
     </tbody>
   </table>
@@ -62,14 +54,11 @@ input[type="number"] {
   font-size: 16px;
 }
 
-.equation p {
-  margin: 0;
-  padding: 5px;
-}
-
 .grid-container {
   border-collapse: collapse;
-  max-width: 50vw;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .grid-container th,
@@ -77,48 +66,25 @@ input[type="number"] {
   border: 1px solid black;
   text-align: center;
   vertical-align: middle;
+  padding: 8px;
 }
 
 .grid-container th {
   font-weight: bold;
-  font-size: 10px;
+  font-size: 16px;
 }
 
-.cylinder-radii {
-  text-align: center;
+.grid-container thead tr:first-child th {
+  font-size: 18px;
 }
 
 .sub-header {
   font-weight: bold;
 }
 
-input {
-  width: 60px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-}
-
-.equation input {
-  width: fit-content;
-}
-
-@media (max-width: 768px) {
-  .grid-container th,
-  .grid-container td {
-    padding: 5px;
-    font-size: 14px;
-  }
-
-  input {
-    width: 40px;
-  }
-
-  .equation input {
-    width: 120px;
-  }
+p {
+  margin: 0;
+  padding: 0;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -131,5 +97,17 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+@media (max-width: 768px) {
+  .grid-container th,
+  .grid-container td {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  input {
+    width: 40px;
+  }
 }
 </style>

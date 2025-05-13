@@ -3,66 +3,55 @@ import { defineStore } from "pinia";
 export const useDataStore = defineStore("data", {
   state: () => ({
     symbolsQuantity: 6,
-    t: 21,
-    R2: 75,
-    r2: 60,
-    R3: 70,
-    r3: 45,
-    S1: 0,
-    V1: 0,
-    at1: 0,
-    w2: 0,
-    E2: 0,
-    Vb: 0,
-    atb: 0,
-    w3: 0,
-    E3: 0,
-    Vm: 0,
-    atm: 0,
-    anm: 0,
-    am: 0,
+    R1: 4,
+    R2: 0,
+    R3: 6,
+    R4: 7,
+    E: 0,
+    E3: 11,
+    I1: 0,
+    I2: 0,
+    I3: 0,
+    I4: 0,
+    I: 0,
+    Uab: 0,
+    Ucd: 0,
+    Uda: 0,
   }),
   actions: {
     calc(formulaIndex: number) {
       switch (formulaIndex) {
         case 1:
-          this.S1 = 43 + 28 * this.t ** 2;
+          this.R2 =
+            (this.R4 * -((this.E3 + this.E) / (this.R3 + this.R4))) /
+            ((this.E3 + -((this.E3 + this.E) / (this.R3 + this.R4)) * this.R3) /
+              this.R1);
           return 0;
         case 2:
-          this.V1 = (56 * this.t) / 1000;
+          this.I1 =
+            (this.E3 + -((this.E3 + this.E) / (this.R3 + this.R4)) * this.R3) /
+            this.R1;
           return 0;
         case 3:
-          this.at1 = 0.056;
+          this.I2 = this.I1;
           return 0;
         case 4:
-          this.w2 = this.V1 / (this.R2 * 10 ** -3);
+          this.I3 = -((this.E3 + this.E) / (this.R3 + this.R4));
           return 0;
         case 5:
-          this.E2 = this.at1 / (this.R2 * 10 ** -3);
+          this.I4 = -((this.E3 + this.E) / (this.R3 + this.R4));
           return 0;
         case 6:
-          this.Vb = (this.w2 * this.r2) / 1000;
+          this.I = this.I1 + this.I3;
           return 0;
         case 7:
-          this.atb = (this.E2 * this.r2) / 1000;
+          this.Uab = Math.abs(this.I1) * this.R1;
           return 0;
         case 8:
-          this.w3 = this.Vb / (this.r3 * 10 ** -3);
+          this.Ucd = Math.abs(this.I4) * this.R4;
           return 0;
         case 9:
-          this.E3 = this.atb / (this.r3 * 10 ** -3);
-          return 0;
-        case 10:
-          this.Vm = (this.w3 * this.R3) / 1000;
-          return 0;
-        case 11:
-          this.atm = (this.E3 * this.R3) / 1000;
-          return 0;
-        case 12:
-          this.anm = (this.Vm ** 2 * 1000) / this.R3;
-          return 0;
-        case 13:
-          this.am = Math.sqrt(this.anm ** 2 + this.atm ** 2);
+          this.Uda = Math.abs(this.I2) * this.R2;
           return 0;
       }
     },
